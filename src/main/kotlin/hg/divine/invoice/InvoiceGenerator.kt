@@ -1,7 +1,9 @@
 package hg.divine.invoice
 
 import hg.divine.invoice.model.Bill
+import hg.divine.invoice.model.FeeRow
 import net.sf.jasperreports.engine.*
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import java.io.ByteArrayOutputStream
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -35,24 +37,20 @@ class InvoiceGenerator {
     private fun constructDataSourceMap(
         bill: Bill
     ): java.util.HashMap<String, Any> {
+        val list = ArrayList<FeeRow>()
+        list.add(FeeRow(feeType = "Tuition", amount = 300))
+        list.add(FeeRow(feeType = "Computer", amount = 100))
+        var dataSource = JRBeanCollectionDataSource(list)
+
         val map = java.util.HashMap<String, Any>()
-        map["BILL_NUMBER"] = bill.billNo
-        map["BILL_DATE"] = bill.date
-        map["CLASS_NAME"] = bill.className
-        map["NAME"] = bill.name
-        map["ADMISSION_FEE"] = bill.admissionFee
-        map["ANNUAL_CHARGE"] = bill.annualCharge
-        map["TUITION_FEE"] = bill.tuitionFee
-        map["COMPUTER_FEE"] = bill.computerFee
-        map["TRANSPORT_FEE"] = bill.transportFee
-        map["EXAM_FEE"] = bill.examFee
-        map["SUPPLEMENTARY_FEE"] = bill.supplementaryFee
-        map["BOOK_PRICE"] = bill.bookPrice
-        map["LATE_FEE"] = bill.lateFee
-        map["MONTHS"] = bill.months
-        map["TOTAL"] = bill.total
-        map["GENERATED_DATE"] =
-            LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")) + " on " + LocalDateTime.now()
+        map["FEE_LIST"] = dataSource
+        map["TOTAL"] = 400
+        map["NAME"] = "Hritik Gupta"
+        map["GUARDIAN_NAME"] = "Rakesh Gupta"
+        map["ADDRESS"] = "Ahraura"
+        map["ROLL_NUMBER"] = "24"
+        map["CLASS"] = "Class One"
+        map["GENERATED_AT"] = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")) + " on " + LocalDateTime.now()
                 .format(formatter)
         return map
     }
