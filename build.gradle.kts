@@ -5,14 +5,16 @@ plugins {
     application
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+group = "hg.divine.invoice"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation("net.sf.jasperreports:jasperreports:6.20.0")
+    implementation("com.lowagie:itext:2.1.7")
     testImplementation(kotlin("test"))
 }
 
