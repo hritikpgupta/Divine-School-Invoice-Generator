@@ -11,36 +11,41 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="109" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="100" height="70" uuid="05fe17bc-8b5a-49cc-86eb-6b8f890438f4"/>
+				<reportElement x="217" y="0" width="120" height="79" uuid="05fe17bc-8b5a-49cc-86eb-6b8f890438f4"/>
 				<imageExpression><![CDATA["images/logo.png"]]></imageExpression>
 			</image>
+			<staticText>
+				<reportElement x="160" y="90" width="234" height="16" uuid="c2b9e401-0d1e-4539-aae8-2ba1e25c2a38"/>
+				<textElement textAlignment="Center">
+					<font fontName="Eras Medium ITC" size="12" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[" WE MAKE YOUR CHILD AN ACHIVER "]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="217" height="108" uuid="e3c0e820-a8d1-476f-a14c-c56ee94b8897"/>
+				<textElement>
+					<font fontName="Eras Medium ITC" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Divine Public School
+Satyanganj, Ahraura
+Mirzapur- 231301
+Uttar Pradesh
+Phone: 9838996103
+Email: divinepublicschool2@gmail.com]]></text>
+			</staticText>
+		</band>
 	</pageHeader>
 	<columnHeader>
 		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
-			<textField>
-				<reportElement x="227" y="24" width="100" height="30" uuid="a4c680f5-89c1-4272-a33b-7a976f8d8fa4"/>
-				<textElement textAlignment="Center">
-					<font size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{GENERATED_DATE}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="227" y="60" width="100" height="30" uuid="6c925a64-8035-4051-b903-b25e8a0f8a10"/>
-				<textElement textAlignment="Center">
-					<font fontName="Alef" size="12"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{TOTAL}]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="125" splitType="Stretch"/>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
