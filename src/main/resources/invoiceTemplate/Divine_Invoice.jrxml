@@ -52,18 +52,11 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="109" splitType="Stretch">
+		<band height="93" splitType="Stretch">
 			<image>
 				<reportElement x="217" y="0" width="120" height="79" uuid="05fe17bc-8b5a-49cc-86eb-6b8f890438f4"/>
 				<imageExpression><![CDATA["images/logo.png"]]></imageExpression>
 			</image>
-			<staticText>
-				<reportElement x="160" y="90" width="234" height="16" uuid="c2b9e401-0d1e-4539-aae8-2ba1e25c2a38"/>
-				<textElement textAlignment="Center">
-					<font fontName="Calibri Light" size="12" isBold="false" isItalic="true"/>
-				</textElement>
-				<text><![CDATA[" WE MAKE YOUR CHILD AN ACHIVER "]]></text>
-			</staticText>
 		</band>
 	</title>
 	<pageHeader>
@@ -81,37 +74,52 @@ Phone: 9838996103
 Email: divinepublicschool7@gmail.com]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="359" y="0" width="194" height="120" uuid="9ee03b7a-642f-4660-b527-977b894ef525"/>
+				<reportElement x="359" y="0" width="194" height="132" uuid="9ee03b7a-642f-4660-b527-977b894ef525"/>
+				<textElement>
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<text><![CDATA[Bill To]]></text>
 			</staticText>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="359" y="20" width="190" height="20" uuid="5d2f969d-39c4-45cd-bf6e-b9365d862d19"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="359" y="26" width="190" height="20" uuid="5d2f969d-39c4-45cd-bf6e-b9365d862d19"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{GUARDIAN_NAME}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="359" y="40" width="190" height="20" uuid="94ba6b8b-e048-4fb5-893b-ae8ce679f33b"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="359" y="46" width="190" height="20" uuid="94ba6b8b-e048-4fb5-893b-ae8ce679f33b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{NAME}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="359" y="60" width="190" height="20" uuid="1f40dde4-4132-458c-94a9-ac65ae0d90b4"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="359" y="66" width="190" height="20" uuid="1f40dde4-4132-458c-94a9-ac65ae0d90b4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{ROLL_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="359" y="80" width="190" height="20" uuid="b4d903d4-0b08-4984-b64e-7f4bf2661625"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="359" y="86" width="190" height="20" uuid="b4d903d4-0b08-4984-b64e-7f4bf2661625"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{CLASS}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
-				<reportElement x="359" y="100" width="190" height="20" uuid="82fff60b-90b7-4bba-817b-a6434ccbd63d"/>
-				<textElement verticalAlignment="Middle"/>
+				<reportElement x="359" y="106" width="190" height="20" uuid="82fff60b-90b7-4bba-817b-a6434ccbd63d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{ADDRESS}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="0" y="113" width="230" height="20" uuid="b598a73e-5f92-4afe-b057-7df4be55d2e6"/>
-				<textElement verticalAlignment="Middle"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$P{GENERATED_AT}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -134,10 +142,12 @@ Email: divinepublicschool7@gmail.com]]></text>
 					</datasetRun>
 					<jr:column width="400" uuid="dcdf0a0d-b84a-420c-824e-2848211a32f4">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
-						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="Table_TH" height="25" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<staticText>
-								<reportElement mode="Opaque" x="0" y="0" width="400" height="30" forecolor="#FFFFFF" backcolor="#334EA3" uuid="d3dcd421-72f2-4914-9cb7-0dff5a25740c">
+								<reportElement mode="Opaque" x="0" y="0" width="400" height="25" forecolor="#FFFFFF" backcolor="#334EA3" uuid="d3dcd421-72f2-4914-9cb7-0dff5a25740c">
 									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 								</reportElement>
 								<textElement textAlignment="Left" verticalAlignment="Middle">
 									<font fontName="Calibri" size="16"/>
@@ -146,18 +156,20 @@ Email: divinepublicschool7@gmail.com]]></text>
 								<text><![CDATA[Fee]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="Table_TH" height="30" rowSpan="1">
+						<jr:tableFooter style="Table_TH" height="25" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<staticText>
-								<reportElement mode="Opaque" x="0" y="0" width="400" height="30" backcolor="#FFFFFF" uuid="44d89699-37ea-4447-ac47-4f24e04de4bb"/>
+								<reportElement mode="Opaque" x="0" y="0" width="400" height="25" backcolor="#FFFFFF" uuid="44d89699-37ea-4447-ac47-4f24e04de4bb"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Calibri" size="14"/>
 								</textElement>
 								<text><![CDATA[Total]]></text>
 							</staticText>
 						</jr:tableFooter>
-						<jr:detailCell style="Table_TD" height="30">
+						<jr:detailCell style="Table_TD" height="25">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<textField textAdjust="StretchHeight">
-								<reportElement x="0" y="0" width="400" height="30" uuid="a4542ba3-0eaf-4b5b-bdd1-01ca05afe60b">
+								<reportElement x="0" y="0" width="400" height="25" uuid="a4542ba3-0eaf-4b5b-bdd1-01ca05afe60b">
 									<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								</reportElement>
 								<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -170,27 +182,27 @@ Email: divinepublicschool7@gmail.com]]></text>
 					</jr:column>
 					<jr:column width="143" uuid="726f1a3d-381d-41e3-be1f-ae343ed34e2d">
 						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
-						<jr:tableHeader style="Table_TH" height="30" rowSpan="1">
+						<jr:tableHeader style="Table_TH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Opaque" x="0" y="0" width="143" height="30" forecolor="#FFFFFF" backcolor="#334EA3" uuid="acd90d8e-c0b3-47f6-9054-03a63d20dbe8"/>
+								<reportElement mode="Opaque" x="0" y="0" width="143" height="25" forecolor="#FFFFFF" backcolor="#334EA3" uuid="acd90d8e-c0b3-47f6-9054-03a63d20dbe8"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Calibri" size="16" isBold="false"/>
 								</textElement>
 								<text><![CDATA[Amount]]></text>
 							</staticText>
 						</jr:tableHeader>
-						<jr:tableFooter style="Table_TH" height="30" rowSpan="1">
+						<jr:tableFooter style="Table_TH" height="25" rowSpan="1">
 							<textField>
-								<reportElement mode="Opaque" x="0" y="0" width="143" height="30" backcolor="#FFFFFF" uuid="4c742c4e-b712-4a1b-9179-e21856f37020"/>
+								<reportElement mode="Opaque" x="0" y="0" width="143" height="25" backcolor="#FFFFFF" uuid="4c742c4e-b712-4a1b-9179-e21856f37020"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Calibri" size="14"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$P{TOTAL}]]></textFieldExpression>
 							</textField>
 						</jr:tableFooter>
-						<jr:detailCell style="Table_TD" height="30">
+						<jr:detailCell style="Table_TD" height="25">
 							<textField>
-								<reportElement x="0" y="0" width="143" height="30" uuid="4e504620-e0d0-4b4d-bbcc-9573406babae"/>
+								<reportElement x="0" y="0" width="143" height="25" uuid="4e504620-e0d0-4b4d-bbcc-9573406babae"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Calibri" size="12"/>
 								</textElement>
