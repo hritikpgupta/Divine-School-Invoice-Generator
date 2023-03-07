@@ -1,18 +1,15 @@
 package hg.divine.invoice
 
-import hg.divine.invoice.model.Bill
 import hg.divine.invoice.model.FeeRow
+import hg.divine.invoice.model.Invoice
 import net.sf.jasperreports.engine.*
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import java.io.ByteArrayOutputStream
-import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class InvoiceGenerator {
 
     private lateinit var jasperReport: JasperReport
-    private var formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
-
     init {
         try {
             jasperReport =
@@ -21,8 +18,8 @@ class InvoiceGenerator {
         }
     }
 
-    fun generateInvoice(bill: Bill): ByteArrayOutputStream? {
-        val dataSourceMap: HashMap<String, Any> = constructDataSourceMap(bill)
+    fun generateInvoice(invoice: Invoice, list: List<FeeRow>): ByteArrayOutputStream? {
+        val dataSourceMap: HashMap<String, Any> = constructDataSourceMap(invoice, list)
         return try {
             val jasperPrint = JasperFillManager.fillReport(jasperReport, dataSourceMap, JREmptyDataSource())
             val os = ByteArrayOutputStream()
@@ -35,30 +32,19 @@ class InvoiceGenerator {
     }
 
     private fun constructDataSourceMap(
-        bill: Bill
+        invoice: Invoice, list: List<FeeRow>
     ): java.util.HashMap<String, Any> {
-        val list = ArrayList<FeeRow>()
-        list.add(FeeRow(feeType = "Tuition Fee", amount = 300))
-        list.add(FeeRow(feeType = "Computer Fee", amount = 120))
-        list.add(FeeRow(feeType = "Annual Fee", amount = 100))
-        list.add(FeeRow(feeType = "Admission Fee", amount = 500))
-        list.add(FeeRow(feeType = "Supplement Fee", amount = 70))
-        list.add(FeeRow(feeType = "Transport Fee", amount = 450))
-        list.add(FeeRow(feeType = "Book Fee", amount = 1250))
-        list.add(FeeRow(feeType = "Exam Fee", amount = 200))
-        var dataSource = JRBeanCollectionDataSource(list)
-        val INR = "₹"
+        val dataSource = JRBeanCollectionDataSource(list)
         val map = java.util.HashMap<String, Any>()
         map["FEE_LIST"] = dataSource
-        map["TOTAL"] = "$INR 2750"
-        map["NAME"] = "Hritik Gupta"
-        map["GUARDIAN_NAME"] = "S/O Rakesh Gupta"
-        map["ADDRESS"] = "Satyanganj, Ahraura"
-        map["ROLL_NUMBER"] = "Roll No 24"
-        map["CLASS"] = "Class One"
-        map["INVOICE_NUMBER"] = "16483443"
-        map["GENERATED_AT"] = LocalDateTime.now().format(formatter) + " at " + LocalDateTime.now()
-            .format(DateTimeFormatter.ofPattern("HH:mm"))
+        map["TOTAL"] = invoice.total
+        map["NAME"] = invoice.studentName
+        map["GUARDIAN_NAME"] = invoice.guardianName
+        map["ADDRESS"] = invoice.address
+        map["ROLL_NUMBER"] = invoice.rollNumber
+        map["CLASS"] = invoice.className
+        map["INVOICE_NUMBER"] = invoice.invoiceNumber
+        map["GENERATED_AT"] = invoice.date
         return map
     }
 
