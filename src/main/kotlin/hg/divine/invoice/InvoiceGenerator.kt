@@ -38,20 +38,27 @@ class InvoiceGenerator {
         bill: Bill
     ): java.util.HashMap<String, Any> {
         val list = ArrayList<FeeRow>()
-        list.add(FeeRow(feeType = "Tuition", amount = 300))
-        list.add(FeeRow(feeType = "Computer", amount = 100))
+        list.add(FeeRow(feeType = "Tuition Fee", amount = 300))
+        list.add(FeeRow(feeType = "Computer Fee", amount = 120))
+        list.add(FeeRow(feeType = "Annual Fee", amount = 100))
+        list.add(FeeRow(feeType = "Admission Fee", amount = 500))
+        list.add(FeeRow(feeType = "Supplement Fee", amount = 70))
+        list.add(FeeRow(feeType = "Transport Fee", amount = 450))
+        list.add(FeeRow(feeType = "Book Fee", amount = 1250))
+        list.add(FeeRow(feeType = "Exam Fee", amount = 200))
         var dataSource = JRBeanCollectionDataSource(list)
-
+        val INR = "₹"
         val map = java.util.HashMap<String, Any>()
         map["FEE_LIST"] = dataSource
-        map["TOTAL"] = 400
+        map["TOTAL"] = "$INR 2750"
         map["NAME"] = "Hritik Gupta"
-        map["GUARDIAN_NAME"] = "Rakesh Gupta"
-        map["ADDRESS"] = "Ahraura"
-        map["ROLL_NUMBER"] = "24"
+        map["GUARDIAN_NAME"] = "S/O Rakesh Gupta"
+        map["ADDRESS"] = "Satyanganj, Ahraura"
+        map["ROLL_NUMBER"] = "Roll No 24"
         map["CLASS"] = "Class One"
-        map["GENERATED_AT"] = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")) + " on " + LocalDateTime.now()
-                .format(formatter)
+        map["INVOICE_NUMBER"] = "16483443"
+        map["GENERATED_AT"] = LocalDateTime.now().format(formatter) + " at " + LocalDateTime.now()
+            .format(DateTimeFormatter.ofPattern("HH:mm"))
         return map
     }
 
