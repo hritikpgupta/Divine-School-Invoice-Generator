@@ -5,11 +5,11 @@ import hg.divine.invoice.model.Invoice
 import net.sf.jasperreports.engine.*
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
 import java.io.ByteArrayOutputStream
-import java.time.format.DateTimeFormatter
 
 class InvoiceGenerator {
 
     private lateinit var jasperReport: JasperReport
+
     init {
         try {
             jasperReport =
@@ -34,7 +34,26 @@ class InvoiceGenerator {
     private fun constructDataSourceMap(
         invoice: Invoice, list: List<FeeRow>
     ): java.util.HashMap<String, Any> {
-        val dataSource = JRBeanCollectionDataSource(list)
+        invoice.total = "2670"
+        invoice.studentName = "Hritik Gupta"
+        invoice.guardianName = "S/O Rakesh Kumar Gupta"
+        invoice.address = "Satyanganj, Ahraura"
+        invoice.rollNumber = "24"
+        invoice.className = "Play Group"
+        invoice.invoiceNumber = "16438"
+        invoice.date = " 24-10-1996"
+        val feeList = ArrayList<FeeRow>()
+        feeList.add(FeeRow(feeType = "Tuition Fee", amount = 300))
+        feeList.add(FeeRow(feeType = "Computer Fee", amount = 120))
+        feeList.add(FeeRow(feeType = "Annual Fee", amount = 100))
+        feeList.add(FeeRow(feeType = "Late Fee", amount = 100))
+        feeList.add(FeeRow(feeType = "Admission Fee", amount = 500))
+        feeList.add(FeeRow(feeType = "Supplement Fee", amount = 70))
+        feeList.add(FeeRow(feeType = "Transport Fee", amount = 450))
+        feeList.add(FeeRow(feeType = "Book Fee", amount = 1250))
+        feeList.add(FeeRow(feeType = "Exam Fee", amount = 200))
+
+        val dataSource = JRBeanCollectionDataSource(feeList)
         val map = java.util.HashMap<String, Any>()
         map["FEE_LIST"] = dataSource
         map["TOTAL"] = invoice.total
