@@ -43,15 +43,16 @@ class InvoiceGenerator {
         invoice.invoiceNumber = "16438"
         invoice.date = " 24-10-1996"
         val feeList = ArrayList<FeeRow>()
-        feeList.add(FeeRow(feeType = "Tuition Fee", amount = 300))
         feeList.add(FeeRow(feeType = "Computer Fee", amount = 120))
         feeList.add(FeeRow(feeType = "Annual Fee", amount = 100))
         feeList.add(FeeRow(feeType = "Late Fee", amount = 100))
         feeList.add(FeeRow(feeType = "Admission Fee", amount = 500))
-        feeList.add(FeeRow(feeType = "Supplement Fee", amount = 70))
         feeList.add(FeeRow(feeType = "Transport Fee", amount = 450))
-        feeList.add(FeeRow(feeType = "Book Fee", amount = 1250))
         feeList.add(FeeRow(feeType = "Exam Fee", amount = 200))
+        feeList.add(FeeRow(feeType = "Supplement Fee \n*Junior Tie,Belt,Diary", amount = 70))
+        feeList.add(FeeRow(feeType = "Tuition Fee \n*January,March,April,May,June", amount = 300))
+        feeList.add(FeeRow(feeType = "Book Fee \n*Art and Activity,Bharat aur Vishav,Sahaj Hindi Vyakran,Science, \n Math,Geography,Geography,Geography,Geography,Geography,Geography", amount = 1250))
+
 
         val dataSource = JRBeanCollectionDataSource(feeList)
         val map = java.util.HashMap<String, Any>()
