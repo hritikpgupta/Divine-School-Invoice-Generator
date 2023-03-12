@@ -9,7 +9,7 @@ fun main() {
     val generator = InvoiceGenerator()
     val byteOS = generator.generateInvoice(Invoice(), emptyList<FeeRow>())
     byteOS.let {
-        val fos = FileOutputStream(File("C:\\Users\\hgupta\\Downloads\\abc.pdf"))
+        val fos = FileOutputStream(File("C:\\Users\\hriti\\Downloads\\ha.pdf"))
         byteOS?.writeTo(fos)
     }
 

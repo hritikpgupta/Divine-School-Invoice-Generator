@@ -49,9 +49,12 @@ class InvoiceGenerator {
         feeList.add(FeeRow(feeType = "Admission Fee", amount = 500))
         feeList.add(FeeRow(feeType = "Transport Fee", amount = 450))
         feeList.add(FeeRow(feeType = "Exam Fee", amount = 200))
-        feeList.add(FeeRow(feeType = "Supplement Fee \n*Junior Tie,Belt,Diary", amount = 70))
-        feeList.add(FeeRow(feeType = "Tuition Fee \n*January,March,April,May,June", amount = 300))
-        feeList.add(FeeRow(feeType = "Book Fee \n*Art and Activity,Bharat aur Vishav,Sahaj Hindi Vyakran,Science, \n Math,Geography,Geography,Geography,Geography,Geography,Geography", amount = 1250))
+       // feeList.add(FeeRow(feeType = "Supplement Fee \n*Junior Tie,Belt,Diary", amount = 70))
+        feeList.add(FeeRow(feeType = "Supplement Fee", amount = 70))
+        //feeList.add(FeeRow(feeType = "Tuition Fee \n*January,March,April,May,June", amount = 300))
+        feeList.add(FeeRow(feeType = "Tuition Fee", amount = 300))
+       // feeList.add(FeeRow(feeType = "Book Fee \n*Art and Activity,Bharat aur Vishav,Sahaj Hindi Vyakran,Science, \n Math,Geography,Geography,Geography,Geography,Geography,Geography", amount = 1250))
+        feeList.add(FeeRow(feeType = "Book Fee", amount = 1250))
 
 
         val dataSource = JRBeanCollectionDataSource(feeList)
@@ -65,6 +68,10 @@ class InvoiceGenerator {
         map["CLASS"] = invoice.className
         map["INVOICE_NUMBER"] = invoice.invoiceNumber
         map["GENERATED_AT"] = invoice.date
+        map["months"] = "January, February, March, April"
+        map["books"] = "Book Details : Art and Activity $160, Bharat aur Vishav $190, Bhasha Sagar $330, Computer $230, English Grammer $195, Eglish Reader $200, G.K $210, Math $390, Sahaj Hindi Vyakran $180, Sanskrit Sagar $125, Science $290"
+        //map["books"] = "Book Details : -"
+       // map["books"] = "Book Details : Art and Activity $160, Bharat aur Vishav $190, Bhasha Sagar $330, Computer $230"
         return map
     }
 
