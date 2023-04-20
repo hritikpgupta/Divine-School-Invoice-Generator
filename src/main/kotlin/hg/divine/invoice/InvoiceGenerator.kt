@@ -40,7 +40,7 @@ class InvoiceGenerator {
         invoice.address = "Satyanganj, Ahraura"
         invoice.rollNumber = "24"
         invoice.className = "Play Group"
-        invoice.invoiceNumber = "16438"
+        invoice.invoiceNumber = "1643845672-2344"
         invoice.date = " 24-10-1996"
         val feeList = ArrayList<FeeRow>()
         feeList.add(FeeRow(feeType = "Computer Fee", amount = 120))
