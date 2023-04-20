@@ -69,7 +69,7 @@ class InvoiceGenerator {
         map["INVOICE_NUMBER"] = invoice.invoiceNumber
         map["GENERATED_AT"] = invoice.date
         map["months"] = "January, February, March, April"
-        map["books"] = "Book Details : Art and Activity $160, Bharat aur Vishav $190, Bhasha Sagar $330, Computer $230, English Grammer $195, Eglish Reader $200, G.K $210, Math $390, Sahaj Hindi Vyakran $180, Sanskrit Sagar $125, Science $290"
+        map["books"] = "Book Details : Art and Activity $160, Bharat aur Vishav $190, Bhasha Sagar $330, Computer $230, English Grammer $195, Eglish Reader $200, G.K $210, Math $390, Sahaj Hindi Vyakran $180, Sanskrit Sagar $125, Science $290, Bhasha Sagar $330, Computer $230, English Grammer $195"
         //map["books"] = "Book Details : -"
        // map["books"] = "Book Details : Art and Activity $160, Bharat aur Vishav $190, Bhasha Sagar $330, Computer $230"
         return map
